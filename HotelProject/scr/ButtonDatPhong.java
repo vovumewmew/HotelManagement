@@ -26,15 +26,15 @@ public class ButtonDatPhong extends JButton{
         ChangeColor();
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
-    public void ChangeColor()
-    {
+    public void ChangeColor() {
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                setBackground(Color.LIGHT_GRAY);
+                setContentAreaFilled(true);
+                setBackground(new Color(184, 226, 224));
             }
-
+    
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                setBackground(Color.WHITE);
+                setContentAreaFilled(false);
             }
         });
     }
