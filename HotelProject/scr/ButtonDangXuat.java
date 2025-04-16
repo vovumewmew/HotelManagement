@@ -22,12 +22,13 @@ public class ButtonDangXuat extends JButton{
         setOpaque(false);
         ChangeColor();
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        LogOut();
     }
     public void ChangeColor() {
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 setContentAreaFilled(true);
-                setBackground(Color.RED);
+                setBackground(new Color(184, 226, 224));
             }
     
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -35,5 +36,29 @@ public class ButtonDangXuat extends JButton{
             }
         });
     }
-    
+    public void LogOut()
+    {
+        addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                int result = JOptionPane.showConfirmDialog(
+    null,
+            "Bạn có chắc là muốn thoát chứ?",
+              "Xác nhận thoát",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE
+                );
+                if(result == JOptionPane.YES_OPTION)
+                {
+                    Window window = SwingUtilities.getWindowAncestor(ButtonDangXuat.this);
+                    if (window != null) {
+                    window.dispose();
+                    }
+                    JFrame lgf = new LoginUI();
+                    lgf.setVisible(true);
+                }
+            }
+        });
+    }
 }

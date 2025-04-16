@@ -16,11 +16,10 @@ public class MainFrame extends JFrame{
     
         ImageIcon backgroundIcon = new ImageIcon(MainFrame.class.getResource("/pic/mf.jpg")); 
         JLabel background = new JLabel(backgroundIcon);
-        background.setLayout(null);
+        background.setLayout(new GridBagLayout());
         setContentPane(background);
     
         JPanel panel = SupPanel();
-        panel.setBounds(85, 35, 415, 600);
         background.add(panel);
 
     }

@@ -41,6 +41,10 @@ public class LoginButton extends JButton{
                     JDialog dialog = optionPane.createDialog("Thông báo");
                     dialog.setLocationRelativeTo(null);
                     dialog.setVisible(true);
+                    Window window = SwingUtilities.getWindowAncestor(LoginButton.this);
+                    if (window != null) {
+                    window.dispose();
+                    }
                     MainFrame MF = new MainFrame();
                     MF.setVisible(true);
                 } else {
